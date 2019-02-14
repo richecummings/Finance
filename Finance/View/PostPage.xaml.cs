@@ -21,6 +21,7 @@ namespace Finance.View
             Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.SetUseSafeArea(this, true);
             try
             {
+                throw new Exception("Exception message");
                 webView.Source = item.ItemLink;
                 var properties = new Dictionary<string, string>
                 {
@@ -34,7 +35,7 @@ namespace Finance.View
                 {
                     { "Blog_Post", $"{item.Title}" }
                 };
-                Crashes.TrackError(ex, properties);
+                TrackError(ex, properties);
             }
         }
 
@@ -42,6 +43,12 @@ namespace Finance.View
         {
             if (await Analytics.IsEnabledAsync())
                 Analytics.TrackEvent("Blog_Post_Opened", properties);
+        }
+
+        private async void TrackError(Exception ex, Dictionary<string, string> properties)
+        {
+            if (await Crashes.IsEnabledAsync())
+                Crashes.TrackError(ex, properties);
         }
     }
 }
