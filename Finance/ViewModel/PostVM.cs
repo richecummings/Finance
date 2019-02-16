@@ -11,7 +11,7 @@ namespace Finance.ViewModel
         private Item selectedPost;
         public Item SelectedPost
         {
-            get { return SelectedPost; }
+            get { return selectedPost; }
             set
             {
                 selectedPost = value;
