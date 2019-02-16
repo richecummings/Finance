@@ -21,12 +21,17 @@ namespace Finance.View
             Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.SetUseSafeArea(this, true);
             try
             {
-                throw new Exception("Exception message");
-                webView.Source = item.ItemLink;
+                Title = item.Title;
+                postImage.Source = item.Enclosure.Url;
+                creatorLabel.Text = item.Creator;
+                dateLabel.Text = item.PublishedDate.ToString("MMMM dd");
+                descriptionLabel.Text = item.Description;
+
                 var properties = new Dictionary<string, string>
                 {
                     { "Blog_Post", $"{item.Title}" }
                 };
+
                 TrackEvent(properties);
             }
             catch (Exception ex)
