@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Finance.Model;
+using Finance.ViewModel;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 using Xamarin.Forms;
@@ -9,16 +10,23 @@ namespace Finance.View
 {
     public partial class PostPage : ContentPage
     {
+        PostVM ViewModel;
         public PostPage()
         {
             InitializeComponent();
             Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.SetUseSafeArea(this, true);
+
+            ViewModel = Resources["vm"] as PostVM;
         }
 
         public PostPage(Item item)
         {
             InitializeComponent();
             Xamarin.Forms.PlatformConfiguration.iOSSpecific.Page.SetUseSafeArea(this, true);
+
+            ViewModel = Resources["vm"] as PostVM;
+            ViewModel.SelectedPost = item;
+
             try
             {
                 Title = item.Title;
