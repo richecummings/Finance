@@ -2,6 +2,7 @@
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Push;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,7 +22,7 @@ namespace Finance
         {
             string androidAppSecret = "4bd81556-1aa5-4f73-b771-2ee273f7328b";
             string iOSAppSecret = "b94e9e90-3595-4427-aef5-2f14e977cb64";
-            AppCenter.Start($"android={androidAppSecret};ios={iOSAppSecret}", typeof(Crashes), typeof(Analytics));
+            AppCenter.Start($"android={androidAppSecret};ios={iOSAppSecret}", typeof(Crashes), typeof(Analytics), typeof(Push));
 
             bool didAppCrash = await Crashes.HasCrashedInLastSessionAsync();
             if (didAppCrash)

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "813659161992",
+    "firebase_url": "https://lpafinance-9fafe.firebaseio.com",
+    "project_id": "lpafinance-9fafe",
+    "storage_bucket": "lpafinance-9fafe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:813659161992:android:8c06091de132ac83",
+        "android_client_info": {
+          "package_name": "com.specs.Finance"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "813659161992-k71mpdj58m8fnekajfr3d9bs504715ba.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQu4kt3OJ1-yO1qM6lrD7U07ZKQ-pvNI0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
